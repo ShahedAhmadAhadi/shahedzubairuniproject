@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+        <!-- <link rel="stylesheet" href="bootstrap.min.css" /> -->
+    </head>
+    <body>
+        <div class="container bg-light d-flex flex-column">
+            <h2 class="header p-3 font-weight-bold text-center col-12">
+                STUDENTS GRADE POINT AVERAGE CALCULATOR
+            </h2>
+            <article class="d-flex flex-wrap-reverse">
+                <div class="box-main-1 col-lg-6 col-md-12">
+                    <div class="p-1 text-center">
+                        <h4
+                            class="m-0 p-1 font-weight-bold title-table"
+                            dir="rtl"
+                        >
+                            جدول اوسط نمرات
+                            <span id="name-ta" class="font-weight-bold p-1">
+                                (اسم مکمل)
+                            </span>
+                        </h4>
+                        <div class="results">
+                            <table class="table table-bordered m-0 table-hover bg-dark text-light">
+                                <thead class="font-weight-bold">
+                                    <tr>
+                                        <td class="font-weight-bold">
+                                            نتیجه کلی
+                                        </td>
+                                        <td>نتیجه</td>
+                                        <td>کریدت</td>
+                                        <td>مضمون</td>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white text-dark">
+                                    <tr>
+                                        <td id="fullResult-1">//</td>
+                                        <td id="result-1">//</td>
+                                        <td id="credit-1">4</td>
+                                        <td id="sub-1">اساسات برنامه نویسی</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="fullResult-2">//</td>
+                                        <td id="result-2">//</td>
+                                        <td id="credit-2">4</td>
+                                        <td id="sub-2">اساسات کمپیوتر</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="fullResult-3">//</td>
+                                        <td id="result-3">//</td>
+                                        <td id="credit-3">4</td>
+                                        <td id="sub-3">ریاضیات مجزا</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="fullResult-4">//</td>
+                                        <td id="result-4">//</td>
+                                        <td id="credit-4">4</td>
+                                        <td id="sub-4">فزیک</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="fullResult-5">//</td>
+                                        <td id="result-5">//</td>
+                                        <td id="credit-5">2</td>
+                                        <td id="sub-5">انگلیسی</td>
+                                    </tr>
+                                    <tr>
+                                        <td id="fullResult-6">//</td>
+                                        <td id="result-6">//</td>
+                                        <td id="credit-6">1</td>
+                                        <td id="sub-6">ثقافت</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot class="p-0">
+                                    <tr class="p-0">
+                                        <td colspan="4" class="p-0">
+                                            <div
+                                                class="footer d-flex justify-content-around col-12"
+                                            >
+                                                <h4>
+                                                    <span id="total-cdt"
+                                                        ></span
+                                                    >
+                                                    : کریدت مجموعی
+                                                </h4>
+                                                <h4>
+                                                    <span id="average"
+                                                        ></span
+                                                    >
+                                                    : فیصدی نمرات
+                                                </h4>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <div class="buttons p-1 m-1">
+                            <input
+                                type="button"
+                                class="btn m-1 lead font-weight-bold"
+                                id="calculate"
+                                value="محاسبه"
+                            />
+                            <input
+                                type="button"
+                                class="btn m-1 lead font-weight-bold"
+                                id="reset"
+                                value="تنظیم مجدد"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="box-main-2 col-lg-6 col-md-12 text-right flex-wrap">
+                    <div
+                        id="name-input"
+                        class="d-flex col-12 col-xl-8 col-lg-8 col-md-8 p-2 m-2 input-group-sm float-right"
+                        
+                    >
+                            <input
+                            id="input-name"
+                            class=" form-control text-dark"
+                            type="text"
+                        />
+                        <div class="input-group-append">
+                            <span id="sp" class="input-group-text text-light">
+                                اسم محصل
+                            </span>
+                        </div>
+                    </div>
+
+                    <div
+                        class="result-input col-12 d-flex flex-column"
+                        id="inputs"
+                    >
+                        <div id="re" class="titles d-flex flex-column flex-xl-row flex-lg-row flex-md-row flex-sm-column col-12 p-0">
+                            <div
+                                class="relt d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <div class="an">نتیجه</div>
+                            </div>
+                            <div
+                                class="crdt d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <div class="an">کریدت</div>
+                            </div>
+                            <div
+                                class="subj d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <div class="an">مضامین</div>
+                            </div>
+                        </div>
+                        <div
+                            class="row-1 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-1 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    min="0"
+                                    required
+                                    id="input-result-1"
+                                />
+                            </div>
+                            <div
+                                class="b-2 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    min="1"
+                                    required
+                                    value="4"
+                                    id="input-cdt-1"
+                                />
+                            </div>
+                            <div
+                                class="b-3 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-1">
+                                    <option id="pro" value="اساسات برنامه نویسی">
+                                        اساسات برنامه نویسی
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="row-2 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-4 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    min="0"
+                                    required
+                                    id="input-result-2"
+                                />
+                            </div>
+                            <div
+                                class="b-5 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    min="1"
+                                    value="4"
+                                    required
+                                    id="input-cdt-2"
+                                />
+                            </div>
+                            <div
+                                class="b-6 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-2">
+                                    <option value="اساسات کمپیوتر">
+                                        اساسات کمپیوتر
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="row-3 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-7 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    required
+                                    min="0"
+                                    id="input-result-3"
+                                />
+                            </div>
+                            <div
+                                class="b-8 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    required
+                                    value="4"
+                                    min="1"
+                                    id="input-cdt-3"
+                                />
+                            </div>
+                            <div
+                                class="b-9 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-3">
+                                    <option value="ریاضیات مجزا">
+                                        ریاضیات مجزا
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="row-4 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-10 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    min="0"
+                                    required
+                                    id="input-result-4"
+                                />
+                            </div>
+                            <div
+                                class="b-11 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    min="1"
+                                    value="4"
+                                    required
+                                    id="input-cdt-4"
+                                />
+                            </div>
+                            <div
+                                class="b-12 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-4">
+                                    <option value="فزیک">فزیک</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="row-5 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-13 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    min="0"
+                                    required
+                                    id="input-result-5"
+                                />
+                            </div>
+                            <div
+                                class="b-14 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    min="1"
+                                    required
+                                    value="2"
+                                    id="input-cdt-5"
+                                />
+                            </div>
+                            <div
+                                class="b-15 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-5">
+                                    <option value="انگلیسی">انگلیسی</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="row-6 d-flex p-0 col-12 flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-column-reverse"
+                        >
+                            <div
+                                class="b-16 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="100"
+                                    min="0"
+                                    required
+                                    id="input-result-6"
+                                />
+                            </div>
+                            <div
+                                class="b-17 d-flex flex-column p-0 m-1 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <input
+                                    type="number"
+                                    max="4"
+                                    min="1"
+                                    value="1"
+                                    required
+                                    id="input-cdt-6"
+                                />
+                            </div>
+                            <div
+                                class="b-18 d-flex flex-column m-1 p-0 col-12 col-xl-4 col-lg-4 col-md-4 col-sm-12"
+                            >
+                                <select name="subjects" required id="subject-6">
+                                    <option value="ثقافت">ثقافت</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr> 
+                        <footer class="footer col-12 justify-content-lg-center flex-row" dir="rtl">
+                            طراحی شده توسط : شاهد احمد "احدی" و زبیر عمر "عدلیار"
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
